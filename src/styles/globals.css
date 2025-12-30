@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f7f7f7;
+}
+input, button {
+  margin-top: 4px;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+label {
+  display: block;
+  margin-top: 12px;
+  font-size: 14px;
+}
