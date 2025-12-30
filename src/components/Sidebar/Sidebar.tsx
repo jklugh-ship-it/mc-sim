@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 interface SidebarProps {
-  setCycleTimes: (times: {cycleTime: number, startDate: Date}[]) => void;
+  setCycleTimes: (times: {cycleTime: number, startDate: Date, completedDate: Date}[]) => void;
   runSimulation: () => void;
   setWipItems: (items: WipItem[]) => void;
   setDataMinDate: (date: string | null) => void;
@@ -47,7 +47,7 @@ export default function Sidebar({
     const headers = lines[0].split(",").map(h => h.trim());
     const dateIndices = stages.map(col => headers.indexOf(col)).filter(idx => idx !== -1);
 
-    const cycleTimes: {cycleTime: number, startDate: Date}[] = [];
+    const cycleTimes: {cycleTime: number, startDate: Date, completedDate: Date}[] = [];
     const wipItems: WipItem[] = [];
     const allDates: Date[] = [];
     const now = new Date();
@@ -74,7 +74,7 @@ export default function Sidebar({
         const diffTime = maxDate.getTime() - minDate.getTime();
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
         if (diffDays > 0) {
-          cycleTimes.push({cycleTime: diffDays, startDate: minDate});
+          cycleTimes.push({cycleTime: diffDays, startDate: minDate, completedDate: maxDate});
         }
       }
 

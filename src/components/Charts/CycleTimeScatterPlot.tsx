@@ -11,7 +11,7 @@ interface WipItem {
 
 interface CycleTimeScatterPlotProps {
   wipItems: WipItem[];
-  cycleTimes: {cycleTime: number, startDate: Date}[];
+  cycleTimes: {cycleTime: number, startDate: Date, completedDate: Date}[];
 }
 
 export default function CycleTimeScatterPlot({ wipItems, cycleTimes }: CycleTimeScatterPlotProps) {

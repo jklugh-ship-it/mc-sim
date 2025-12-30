@@ -41,9 +41,7 @@ export default function Histogram({ cycleTimes }: HistogramProps) {
       // Compute daily completions from historical data
       const dailyMap = new Map<string, number>();
       filteredCycleTimes.forEach(c => {
-        const completionDate = new Date(c.startDate);
-        completionDate.setDate(completionDate.getDate() + c.cycleTime);
-        const dateKey = completionDate.toISOString().split('T')[0];
+        const dateKey = c.completedDate.toISOString().split('T')[0];
         dailyMap.set(dateKey, (dailyMap.get(dateKey) || 0) + 1);
       });
       const dailyCompletions = Array.from(dailyMap.values());

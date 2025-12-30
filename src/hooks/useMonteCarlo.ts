@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { runMonteCarlo } from "../simulation/monteCarlo";
 
-export function useMonteCarlo(cycleTimes: {cycleTime: number, startDate: Date}[], workItemCount: number) {
+export function useMonteCarlo(cycleTimes: {cycleTime: number, startDate: Date, completedDate: Date}[], workItemCount: number) {
   const [results, setResults] = useState<number[]>([]);
 
   function runSimulation() {
