@@ -64,7 +64,7 @@ export default function Histogram({ cycleTimes }: HistogramProps) {
 
   return (
     <div style={{ background: "#fff", padding: "24px", borderRadius: "8px" }}>
-      <h3>How Many</h3>
+      <h3>Monte Carlo Simulation - How Many</h3>
       <div style={{ display: "flex", gap: "20px", alignItems: "flex-start", marginBottom: "16px" }}>
         <div>
           <h4 style={{ marginBottom: "8px", fontSize: "14px" }}>Forecast Timebox</h4>
